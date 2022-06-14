@@ -1,0 +1,14 @@
+---
+- name: user module
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    myuser: "teste"
+    mypassword: "BHU*nji9"
+  tasks:
+    - name: mudando senha
+      ansible.builtin.user:
+        name: "{{ myuser }}"
+        state: present
+        password: "{{ mypassword | password_hash('sha512') }}"
