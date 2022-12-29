@@ -5,7 +5,7 @@
   become: true
   vars:
     myuser: "teste"
-    mypassword: "BHU*nji9"
+    mypassword: "SENHA-USER"
   tasks:
     - name: mudando senha
       ansible.builtin.user:
